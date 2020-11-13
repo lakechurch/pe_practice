@@ -11,25 +11,36 @@
  */
 #include<stdio.h>
 
-int fib(int);
+unsigned long fib(unsigned long);
 
 
 int main() {
-  unsigned long n;
+  //unsigned long n;
+  unsigned long q = 0, sum = 0;
+  int c = 0;
 
-  scanf("%ul", &n);
+  //n = 33;
+  //scanf("%lu", &n);
   printf("Fibonacci series\n");
 
-  for (int c = 1; c <= n; c++)
-  {
-    printf("%d\n", fib(c));
+  while (q < 4000000) {
+  //for (int c = 1; c <= n; c++)
+  //{
+    q = fib(c);
+    if (q % 2 == 0) {
+      sum += q;
+    }
+    //printf("%lu\n", q);
+
+    c++;
   }
+  printf("%lu\n", sum);
 
   return 0;
 }
 
 
-int fib(int n) {
+unsigned long fib(unsigned long n) {
   if (n == 0)
     return 0;
   else if (n == 1)
