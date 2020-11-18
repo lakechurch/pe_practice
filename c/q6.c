@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 int main(void) {
-  unsigned long long int sum_of_squares=0, square_of_sum=0;
+  unsigned long sum_of_squares=0, square_of_sum=0;
 
   for (int i = 1; i <= 100; i++) {
     sum_of_squares += i*i;
@@ -21,5 +21,5 @@ int main(void) {
   }
   square_of_sum *= square_of_sum;
 
-  printf("%llu %llu %llu\n", square_of_sum, sum_of_squares, square_of_sum-sum_of_squares);
+  printf("%lu %lu %lu\n", square_of_sum, sum_of_squares, square_of_sum-sum_of_squares);
 }
