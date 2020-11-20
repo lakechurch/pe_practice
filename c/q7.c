@@ -4,12 +4,31 @@
  */
 #include <stdio.h>
 
-long get_prime(int index)
+long get_prime(int count);
+int is_prime(long num);
+
+long get_prime(int count)
 {
-  long prime;
+  long prime=1;
+  for (int d = 1; d < count; d++)
+  {
+    long test=prime+1;
+    int flag=0;
+    while (flag == 0)
+    {
+      if (is_prime(test) == 1)
+      {
+        flag = 1;
+      }
+      else
+      {
+        test += 1;
+      }
+      prime = test;
+      continue;
+    }
 
-  for ()
-
+  }
   return prime;
 }
 
@@ -29,9 +48,10 @@ int is_prime(long num)
 
 int main(void)
 {
-  int n=6;
-
-  get_prime(n);
-
+  int n;
+  printf("Input index of prime: ");
+  scanf("%d", &n);
+  printf("%ld\n", get_prime(n));
   return 0;
 }
+
